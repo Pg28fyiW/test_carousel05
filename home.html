@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>くらしTEPCO web - ホーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="coupon_carousel.css">
+</head>
+<body>
+    <main class="page">
+
+        <section class="hero">
+            <div class="hero_bg">
+                <picture>
+                    <source media="(max-width: 1050px)" srcset="assets/images/top/background_image/sp/04.webp">
+                    <img src="assets/images/top/background_image/pc/04.webp" alt="">
+                </picture>
+            </div>
+
+            <div class="hero_content">
+                <div class="account_panel" id="billing">
+                    <div class="plan_row">
+                        <span>表示中のプラン</span><b>スタンダードプラン</b><span class="plan_arrow"></span>
+                    </div>
+
+
+                    <div class="bill_card">
+                        <div class="bill_main">
+                            <div class="bill_left">
+                                <span class="label">
+                                    <img class="bill_icon" src="assets/images/top/FV/icon/card.svg" alt="">10月のお支払い料金
+                                </span><em class="bill_status">確定</em>
+                            </div>
+                            <div class="bill_number">
+                                <strong>8,250</strong><small>円</small>
+                            </div>
+                        </div>
+                        <span class="chevron">＞</span>
+                    </div>
+
+                    <div class="point_row">
+                        <span class="point_title">
+                            <img class="point_badge" src="assets/images/top/FV/icon/point.svg" alt="">ポイント
+                        </span><strong>1,234 <small>P</small></strong>
+                        <span class="chevron">＞</span>
+                    </div>
+                </div>
+
+                <!-- 今月のトピックス-->
+                <div class="topics"></div>
+            </div>
+
+            <div class="fv_mascot">
+                <div class="fv_mascot_comment"><p>今日もおつかれさま</p></div>
+            </div>
+        </section>
+
+        <section class="section services" id="services">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/service.svg" alt="">くらしのサービス
+                </h2>
+                <div id="services_area"><!-- サービス一覧（元画面ではKARTEにより動的に挿入） --></div>
+                <a class="outline_button" href="#services">サービスをもっと見る <span class="outline_button_arrow"></span></a>
+            </div>
+        </section>
+
+        <section class="section settings" id="settings">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/settings.svg" alt="">便利な機能
+                </h2>
+                <div id="settings_area"><!-- 便利な機能一覧（元画面ではKARTEにより動的に挿入） --></div>
+                <a class="outline_button" href="#features">サービスをもっと見る <span class="outline_button_arrow"></span></a>
+            </div>
+        </section>
+
+        <section class="section eco" id="eco">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/point_eco.svg" alt="">ポイントがたまるエコプログラム
+                </h2>
+                <div id="point_area"><!-- エコプログラム一覧（元画面ではKARTEにより動的に挿入） --></div>
+                <a class="outline_button" href="#features">サービスをもっと見る <span class="outline_button_arrow"></span></a>
+            </div>
+        </section>
+
+        <section class="section recommendations" id="recommendations">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/newspaper.svg" alt="">おすすめ情報
+                </h2>
+                <div id="recommendations_area"><!-- おすすめ情報一覧（元画面ではKARTEにより動的に挿入） --></div>
+            </div>
+        </section>
+
+
+        <!-- おトクなクーポン -->
+        <section class="section coupons" id="coupons">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/coupon.svg" alt="">おトクなクーポン
+                </h2>
+                <div id="coupons_area">
+
+                    <!-- KARTEのエリア -->
+                    <div>
+                        <!-- スライドのデータ部分 karte_kcx_data_coupons_source -->
+                        <div class="karte_kcx_data_coupons_source">
+
+                            <!-- 【おトクなクーポン】
+                            <div id="karte_kcx_home_coupons_slide01"></div>
+                            <div id="karte_kcx_home_coupons_slide02"></div>
+                            <div id="karte_kcx_home_coupons_slide03"></div>
+                            <div id="karte_kcx_home_coupons_slide04"></div>
+                            <div id="karte_kcx_home_coupons_slide05"></div>
+                            <div id="karte_kcx_home_coupons_slide06"></div>
+                            <div id="karte_kcx_home_coupons_slide07"></div>
+                            <div id="karte_kcx_home_coupons_slide08"></div>
+                            <div id="karte_kcx_home_coupons_slide09"></div>
+                            <div id="karte_kcx_home_coupons_slide10"></div>
+                            <div id="karte_kcx_home_coupons_slide11"></div>
+                            <div id="karte_kcx_home_coupons_slide12"></div>
+                            <div id="karte_kcx_home_coupons_slide13"></div>
+                            <div id="karte_kcx_home_coupons_slide14"></div>
+                            <div id="karte_kcx_home_coupons_slide15"></div>
+                            -->
+
+                            <!-- スライド1 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="10%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">10%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">10%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド1<br>10%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1スライド1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド2 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="20%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">20%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">20%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド2<br>20%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2スライド2</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド3 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="30%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">30%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">30%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド3<br>30%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3スライド3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド4 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="40%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">40%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">40%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド4<br>40%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4スライド4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド5 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="50%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">50%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">50%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド5<br>50%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5スライド5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド6 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="60%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">60%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">60%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド6<br>60%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6スライド6</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- スライド7 -->
+                            <a class="karte_kcx_data_coupons_item" href="https://www.google.co.jp" target="_blank">
+                                <div class="karte_kcx_data_coupons_card">
+                                    <div class="karte_kcx_data_coupons_media">
+                                        <img class="karte_kcx_data_coupons_thumb" src="assets/images/coupon-placeholder.svg" alt="70%Iam" >
+                                        <span class="karte_kcx_data_coupons_badge">70%OFF</span>
+                                    </div>
+
+                                    <div class="karte_kcx_data_coupons_body">
+                                        <p class="karte_kcx_data_coupons_title">70%TEST</p>
+                                        <span class="karte_kcx_data_coupons_line"></span>
+                                        <p class="karte_kcx_data_coupons_desc">スライド7<br>70%OFF</p>
+                                        <div class="karte_kcx_data_coupons_data_area">
+                                            <p class="karte_kcx_data_coupons_note">スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7スライド7</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div><!-- スライドのデータ部分 End! karte_kcx_data_coupons_source -->
+
+                        <!-- SPエリア -->
+                        <div class="karte_kcx_home_coupons_only_sp">
+
+                            <div class="karte_kcx_home_coupons_only_sp_slider_main_wrap">
+                                <div class="karte_kcx_home_coupons_only_sp_root astro-RSPN73YO_only_sp">
+                                    <div class="karte_kcx_home_coupons_only_sp_slider slider-BZV63T2Q_only_sp astro-RSPN73YO_only_sp">
+
+                                        <div class="karte_kcx_home_coupons_only_sp_slider__Group slider__Group-BZV63T2Q_only_sp astro-RSPN73YO_only_sp">
+                                            <!-- SP用カードをJavascriptで作る -->
+                                        </div>
+
+                                        <button class="karte_kcx_home_coupons_only_sp_slider__Btn karte_kcx_home_coupons_only_sp_slider__prev slider__prev-BZV63T2Q_only_sp astro-RSPN73YO_only_sp">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left astro-RSPN73YO_only_sp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="13" height="37">
+                                                <path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z" class="astro-RSPN73YO_only_sp"></path>
+                                            </svg>
+                                        </button>
+
+                                        <button class="karte_kcx_home_coupons_only_sp_slider__Btn karte_kcx_home_coupons_only_sp_slider__next slider__next-BZV63T2Q_only_sp astro-RSPN73YO_only_sp">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right astro-RSPN73YO_only_sp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="13" height="37">
+                                                <path fill="currentColor" d="M96 480c8.188 0 16.38-3.125 22.62-9.375l192-192c12.5-12.5 12.5-32.75 0-45.25l-192-192c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L242.75 256l-169.4 169.4c-12.5 12.5-12.5 32.75 0 45.25C79.6 476.9 87.8 480 96 480z" class="astro-RSPN73YO_only_sp"></path>
+                                            </svg>
+                                        </button>
+
+
+                                        <ul class="karte_kcx_home_coupons_only_sp_slider__IndicatorGroup slider__IndicatorGroup-BZV63T2Q_only_sp astro-RSPN73YO_only_sp">
+                                            <li class="karte_kcx_home_coupons_only_sp_slider__Indicator slider__Indicator-BZV63T2Q_only_sp astro-RSPN73YO_only_sp"></li>
+                                            <!-- 再生ボタンと停止ボタン -->
+                                            <li class="karte_kcx_home_coupons_only_sp_auto_slide_btn pause"></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- SPエリア --><!-- karte_kcx_home_coupons_only_sp -->
+
+
+                        <!-- PCエリア -->
+                        <div class="karte_kcx_home_coupons_only_pc">
+                            <div class="karte_kcx_home_coupons_only_pc_main_wrap">
+
+                                <div class="karte_kcx_home_coupons_only_pc_root">
+                                    <div class="karte_kcx_home_coupons_only_pc_slider">
+                                        <div class="karte_kcx_home_coupons_only_pc_group">
+                                            <!-- PC用カードをJavascriptで作る -->
+                                        </div>
+
+                                        <button type="button" class="karte_kcx_home_coupons_only_pc_prev" aria-label="前のおすすめを表示">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left astro-RSPN73YO_only_sp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="13" height="37">
+                                                <path fill="currentColor" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z" class="astro-RSPN73YO_only_sp"></path>
+                                            </svg>
+                                        </button>
+
+
+                                        <button type="button" class="karte_kcx_home_coupons_only_pc_next" aria-label="次のおすすめを表示">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right astro-RSPN73YO_only_sp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="13" height="37">
+                                                <path fill="currentColor" d="M96 480c8.188 0 16.38-3.125 22.62-9.375l192-192c12.5-12.5 12.5-32.75 0-45.25l-192-192c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L242.75 256l-169.4 169.4c-12.5 12.5-12.5 32.75 0 45.25C79.6 476.9 87.8 480 96 480z" class="astro-RSPN73YO_only_sp"></path>
+                                            </svg>
+                                        </button>
+
+                                        <div class="karte_kcx_home_coupons_only_pc_controls">
+                                            <div class="karte_kcx_home_coupons_only_pc_indicators" aria-label="カルーセルのページング"></div>
+                                            <button type="button" class="karte_kcx_home_coupons_only_pc_pause pause" aria-label="自動再生を停止"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- PCエリア --><!-- karte_kcx_home_coupons_only_pc -->
+
+                        <a class="outline_button" href="/coupon">サンプルをもっと見る <span class="outline_button_arrow"></span></a>
+                        <!-- カルーセルJS -->
+                        <div id="karte_kcx_home_coupons_js"></div>
+                    </div><!-- KARTEのエリア -->
+
+                </div><!-- coupons_area -->
+
+            </div><!-- section_inner -->
+        </section>
+
+
+
+
+        <section class="section articles">
+            <div class="section_inner">
+                <h2 class="section_title">
+                    <img class="section_icon_img" src="assets/images/top/title_icon/led.svg" alt="">くらしのアイデア
+                </h2>
+                <div id="idea_area"><!-- くらしのアイデア一覧（元画面ではKARTEにより動的に挿入） --></div>
+                <a class="outline_button" href="#">くらしのアイデアをもっと見る <span class="outline_button_arrow"></span></a>
+            </div>
+        </section>
+
+    </main>
+    <script src="coupon_carousel.js"></script>
+</body>
+</html>

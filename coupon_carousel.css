@@ -1,0 +1,1221 @@
+
+/* おトクなクーポンのカルーセル */
+
+/* iOS 12・古いSafari互換性対応 */
+@supports selector(:where(.test)) {
+  /* :where() サポートブラウザのみ以下が有効 */
+  .supports-where { }
+}
+
+/* :where() 非対応ブラウザ向けフォールバック - 基本スタイルを確保 */
+@supports not selector(:where(.test)) {
+  .karte_kcx_home_coupons_only_sp_root {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    background: #ECFAD7;
+  }
+  .karte_kcx_home_coupons_only_sp_slider {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__Group {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 24px);
+    padding-bottom: 20px;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup {
+    bottom: -14px;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__Btn {
+    top: -50px !important;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__Thumb {
+    width: 90%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+    border-radius: 5px;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__ImgContent {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__Item {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 480px) {
+    .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup {
+      bottom: -10px;
+    }
+  }
+}
+
+.karte_kcx_home_coupons_only_sp a,
+.karte_kcx_home_coupons_only_pc a,
+.karte_kcx_data_coupons_source a {
+  text-decoration: none;
+}
+
+.karte_kcx_home_coupons_only_sp_slider_h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0 24px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.2;
+  --title-icon-size: 1.75em;
+
+  /* background-color: aqua; */
+
+  /* 文字の部分の間の余白を増やし、SP/PC条件分け
+  PC：上の余白64px、下の余白24px　 SP:上の余白48px 、下の余白16px */
+}
+
+.karte_kcx_home_coupons_only_sp_slider_h3::before {
+  content: "";
+  width: var(--title-icon-size);
+  height: var(--title-icon-size);
+  flex: 0 0 var(--title-icon-size);
+  margin-right: 0.35em;
+  background-image: url("assets/images/coupon-placeholder.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.karte_kcx_home_coupons_only_sp_slider_main_wrap {
+  /* border: 1px solid #000; */
+  display: flex;
+  flex-direction: column;
+  background: #ECFAD7;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-sizing: border-box;
+}
+
+/* サイドイメージカルーセル */
+.karte_kcx_home_coupons_only_sp_root {
+  /* 左右のスライダアイテムの大きさを設定 */
+  /* --min-scale-size-pc: .8; */
+  --min-scale-size-pc: .6;
+  --min-scale-size-sp: 1;
+  --indicator-active-color: #E72221
+}
+
+.karte_kcx_home_coupons_only_sp_root:where(.astro-RSPN73YO_only_sp) {
+  /* スライダーの全体の高さを調節 */
+  /* カード(456px)+ページング分(24px)の固定値 */
+  height: 500px;
+  overflow: visible;
+  position: relative;
+  background: #ECFAD7; /* SPの背景色 */
+}
+
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) {
+  position: absolute;
+  /* スライダー全体の高さを調節 */
+  top: 40%;
+  transform: translateY(-40%);
+  width: 100%;
+  height: 100%;
+  overflow-x: clip;
+  overflow-y: visible
+}
+
+.karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) {
+  position: relative;
+  width: 100%;
+  /* ページング分(24px)だけ残してカードに密着させる */
+  height: calc(100% - 24px);
+  padding-bottom: 20px;
+
+  /* background-color: yellow; */
+}
+
+/* インディケーターの位置を上下に調節 */
+.karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+  bottom: -14px;
+}
+@media screen and (max-width: 768px) {
+  .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+    bottom: -14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+    bottom: -10px;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+}
+
+/* 「前へ」「次へ」ボタンの位置を上下に調節 */
+.karte_kcx_home_coupons_only_sp_slider__Btn:where(.astro-RSPN73YO_only_sp) {
+  top: -50px !important;
+}
+
+.karte_kcx_home_coupons_only_sp_slider__Thumb:where(.astro-RSPN73YO_only_sp) {
+  /* 修正 */
+  /* width: 100%; */
+  width: 90%;
+  /* 削除 */
+  /* height: 100%; */
+  object-fit: cover;
+  display: block;
+  object-position: center;
+  border-radius: 5px;
+}
+.karte_kcx_home_coupons_only_sp_slider__ImgContent:where(.astro-RSPN73YO_only_sp) {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  display: flex;
+  flex-direction: column;
+}
+
+.karte_kcx_sp_rec_home_coupons_card {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 12px 0 20px; /* Figma: pt12 / pb20、左右はrow側で確保 */
+  background: #fff; /* カードの背景色 */
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, .06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_card {
+  height: 100%;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_card > .karte_kcx_sp_rec_home_coupons_row + .karte_kcx_sp_rec_home_coupons_row {
+  margin-top: 6px;
+}
+
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_row {
+  flex: 0 0 calc((100% - 12px) / 3);
+}
+
+.karte_kcx_sp_rec_home_coupons_row {
+  /* Grid非対応ブラウザ向けフォールバック */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1 1 0;
+  min-height: 128px;
+  padding: 0 20px 0 12px; /* Figma: pl12 / pr20 */
+  box-sizing: border-box;
+}
+
+.karte_kcx_sp_rec_home_coupons_row.karte_kcx_sp_rec_home_coupons_row--no-note {
+  min-height: 128px;
+}
+
+.karte_kcx_sp_rec_home_coupons_media,
+.karte_kcx_sp_rec_home_coupons_body {
+  flex: 0 0 auto;
+}
+
+.karte_kcx_sp_rec_home_coupons_media {
+  width: 128px;
+  margin-right: 15px;
+}
+
+.karte_kcx_sp_rec_home_coupons_body {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.karte_kcx_sp_rec_home_coupons_note {
+  /* Figmaデザインに注記欄が無いため非表示(高さ計算に影響しないようdisplay:noneは使わない) */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  color: #888;
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@supports (display: grid) {
+  .karte_kcx_sp_rec_home_coupons_row {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    grid-template-rows: auto auto;
+    grid-row-gap: 0;
+    grid-column-gap: 15px;
+    align-items: center;
+  }
+
+  .karte_kcx_sp_rec_home_coupons_row.karte_kcx_sp_rec_home_coupons_row--no-note {
+    grid-template-rows: auto;
+  }
+
+  .karte_kcx_sp_rec_home_coupons_media,
+  .karte_kcx_sp_rec_home_coupons_body {
+    grid-row: 1;
+  }
+
+  .karte_kcx_sp_rec_home_coupons_media {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .karte_kcx_sp_rec_home_coupons_body {
+    flex: none;
+  }
+
+  .karte_kcx_sp_rec_home_coupons_note {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    width: auto;
+  }
+}
+
+.karte_kcx_data_coupons_data_area {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.karte_kcx_sp_rec_home_coupons_media {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 128px;
+  background: #f2f2f2;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.karte_kcx_coupon_discount_badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 6px 10px;
+  border-radius: 8px 0 0 0;
+  background: #e60012;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.karte_kcx_sp_rec_home_coupons_media .karte_kcx_coupon_discount_badge {
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_media {
+  background: #ddd;
+}
+
+.karte_kcx_sp_rec_home_coupons_thumb {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* 画像全体を切り取らずに表示 */
+}
+
+
+.karte_kcx_sp_rec_home_coupons_body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.karte_kcx_sp_rec_home_coupons_body > * + * {
+  margin-top: 12px;
+}
+
+.karte_kcx_sp_rec_home_coupons_title {
+  margin: 0;
+  padding: 2px 10px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #666;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.karte_kcx_sp_rec_home_coupons_title br,
+.karte_kcx_pc_rec_home_coupons_title br {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .karte_kcx_sp_rec_home_coupons_title br,
+  .karte_kcx_pc_rec_home_coupons_title br {
+    display: inline;
+  }
+}
+
+.karte_kcx_sp_rec_home_coupons_line {
+  width: 30px;
+  height: 3px;
+  background: #e9c400;
+  border-radius: 999px;
+  display: none;
+}
+
+.karte_kcx_sp_rec_home_coupons_desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+  overflow: visible;
+}
+
+@media screen and (max-width: 480px) {
+  .karte_kcx_home_coupons_only_sp_root:where(.astro-RSPN73YO_only_sp) {
+    height: 500px;
+  }
+  .karte_kcx_sp_rec_home_coupons_card--count-1 .karte_kcx_sp_rec_home_coupons_row,
+  .karte_kcx_sp_rec_home_coupons_card--count-2 .karte_kcx_sp_rec_home_coupons_row,
+  .karte_kcx_sp_rec_home_coupons_card--count-3 .karte_kcx_sp_rec_home_coupons_row {
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 128px;
+  }
+}
+
+.karte_kcx_home_coupons_only_sp_slider__Thumb:where(.astro-RSPN73YO_only_sp) {
+  margin: 0 auto;
+}
+
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  display: flex;
+  box-sizing: border-box;
+  overflow: visible;
+  text-decoration: none;
+  /* 削除 */
+  /* background-color: #fff; */
+  left: 150%;
+  z-index: 1;
+  text-decoration: none!important;
+  /* 削除 */
+  /* border: 1px solid #e7e8e8; */
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: 1s all ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* 削除 */
+  /* border-radius: 5px; */
+}
+/* 削除 */
+/* .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):hover {
+  box-shadow: 0 4px 10px -2px #00100e14, 0 4px 20px 8px #00100e08
+} */
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(1) {
+  opacity: 1;
+  left: 0;
+  z-index: 1;
+  transform: translate(-100%) scale(var(--min-scale-size-pc))
+}
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(2) {
+  opacity: 1;
+  left: 0;
+  z-index: 2;
+  /* PCの場合のチラ見せ部分を多くする（左側） */
+  /* transform: translate(-50%) scale(var(--min-scale-size-pc)) */
+  transform: translate(-30%) scale(var(--min-scale-size-pc));
+}
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(3) {
+  opacity: 1;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%) scale(1)
+}
+.karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(4) {
+  opacity: 1;
+  left: 100%;
+  z-index: 2;
+  /* PCの場合のチラ見せ部分を多くする（右側） */
+  /* transform: translate(-50%) scale(var(--min-scale-size-pc)) */
+  transform: translate(-70%) scale(var(--min-scale-size-pc));
+}
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  display: none
+}
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(1) {
+  opacity: 1;
+  left: 0;
+  z-index: 1;
+  transform: translate(-100%) scale(var(--min-scale-size-pc))
+}
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(2) {
+  opacity: 1;
+  display: flex;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%) scale(1)
+}
+.sliderSimple-BZV63T2Q_PC4S_SP1S3B:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  display: none
+}
+.sliderSimple-BZV63T2Q_PC4S_SP1S3B:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(3) {
+  display: flex
+}
+.karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderSingle-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(1) {
+  opacity: 1;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 4;
+  transform: none
+}
+.sliderSingle-BZV63T2Q_PC4S_SP1S3B:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  transition: all .8s ease
+}
+.sliderLoaded-BZV63T2Q_PC4S_SP1S3B:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+  transition: all .8s ease
+}
+
+
+.karte_kcx_home_coupons_only_sp_slider__Btn:where(.astro-RSPN73YO_only_sp) {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: #555555;
+  z-index: 4;
+  transition: background-color .3s ease;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  box-shadow: 0 8px 18px -2px #00100e14, 0 8px 36px 16px #00100e08;
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.karte_kcx_home_coupons_only_sp_slider__prev:where(.astro-RSPN73YO_only_sp) {
+  left: 19%
+}
+.karte_kcx_home_coupons_only_sp_slider__next:where(.astro-RSPN73YO_only_sp) {
+  right: 19%
+}
+.karte_kcx_home_coupons_only_sp_slider__Btn:where(.astro-RSPN73YO_only_sp):hover {
+  background-color: #f7f8f8
+}
+.karte_kcx_home_coupons_only_sp_slider__Btn:where(.astro-RSPN73YO_only_sp) svg:where(.astro-RSPN73YO_only_sp) {
+  height: 16px;
+  overflow: visible;
+  vertical-align: -3px
+}
+
+.karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  /* mac_safariだとインジケーター部分が詰まって表示されるのを修正。古いブラウザにも対応 */
+  /* gap: 12px; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* 削除 */
+  /* bottom: 1px */
+}
+.karte_kcx_home_coupons_only_sp_slider__Indicator:where(.astro-RSPN73YO_only_sp) {
+  cursor: pointer;
+  width: 11px;
+  height: 11px;
+  background: rgba(0, 16, 14, .12);
+  border-radius: 40px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .18);
+  /* mac_safariだとインジケーター部分が詰まって表示されるのを修正。古いブラウザにも対応 */
+  margin: 0 4.5px;
+}
+.karte_kcx_home_coupons_only_sp_slider__Indicator:where(.astro-RSPN73YO_only_sp).indicatorCurrent-BZV63T2Q_only_sp {
+  background: var(--indicator-active-color)
+}
+
+@media screen and (max-width: 720px) {
+  .karte_kcx_home_coupons_only_sp_root:where(.astro-RSPN73YO_only_sp) {
+    height: 500px;
+  }
+  .karte_kcx_home_coupons_only_sp_slider_h3 {
+    font-size: 1.8rem;
+    /* 文字の部分の間の余白を増やし、SP/PC条件分け
+    PC：上の余白64px、下の余白24px　 SP:上の余白48px 、下の余白16px */
+    margin: 0 0 0 10px;
+    --title-icon-size: 1.6em;
+  }
+
+  /* .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+    bottom: -26px;
+  } */
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+    width: 86%;
+  }
+  .karte_kcx_sp_rec_home_coupons_card {
+    width: 92%;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(1) {
+    transform: translate(-100%) scale(var(--min-scale-size-sp));
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(2) {
+    transform: translate(-85%) scale(var(--min-scale-size-sp));
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(3) {
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%) scale(var(--min-scale-size-sp));
+    width: 86%;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(4) {
+    transform: translate(-15%) scale(var(--min-scale-size-sp));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .karte_kcx_home_coupons_only_sp_slider__ImgContent:where(.astro-RSPN73YO_only_sp) {
+    width: 100%;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):hover {
+    box-shadow: none
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(1) {
+    left: 0;
+    z-index: 1;
+    transform: translate(-100%) scale(var(--min-scale-size-sp))
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(2) {
+    left: 0;
+    z-index: 2;
+    transform: translate(-85%) scale(var(--min-scale-size-sp));
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(3) {
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%) scale(var(--min-scale-size-sp));
+    width: 86%;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(4) {
+    left: 100%;
+    z-index: 2;
+    transform: translate(-15%) scale(var(--min-scale-size-sp));
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp):nth-child(2) {
+    display: block
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderSimple-BZV63T2Q_PC4S_SP1S3B .karte_kcx_home_coupons_only_sp_slider__Item:where(.astro-RSPN73YO_only_sp) {
+    transition: none
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .karte_kcx_home_coupons_only_sp_slider_h3 {
+    font-size: 13.5px;
+    margin: 0 0 0 12px;
+    --title-icon-size: 1.35em;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_card > .karte_kcx_sp_rec_home_coupons_row + .karte_kcx_sp_rec_home_coupons_row {
+    margin-top: 4px;
+  }
+  .karte_kcx_sp_rec_home_coupons_note {
+    font-size: 5.625px;
+    line-height: 1.28;
+    max-height: none;
+  }
+  .karte_kcx_home_coupons_only_sp_slider:where(.astro-RSPN73YO_only_sp) .karte_kcx_home_coupons_only_sp_slider__Group:where(.astro-RSPN73YO_only_sp).sliderDouble-BZV63T2Q_PC4S_SP1S3B .karte_kcx_sp_rec_home_coupons_card {
+    height: 100%;
+  }
+  .karte_kcx_home_coupons_only_sp_root:where(.astro-RSPN73YO_only_sp) {
+    height: 500px;
+  }
+  .karte_kcx_home_coupons_only_sp_slider__IndicatorGroup:where(.astro-RSPN73YO_only_sp) {
+    /* bottom: 0px; */
+    transform: translateY(-50%) !important;
+  }
+}
+
+
+/* 停止ボタンと再生ボタン */
+.karte_kcx_home_coupons_only_sp_slider__IndicatorGroup {
+  position: relative;
+}
+
+.karte_kcx_home_coupons_only_sp_auto_slide_btn {
+  position: absolute;
+}
+
+
+/* 再生ボタン */
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.triangle {
+  bottom: calc(100% - 17.5px);
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px -2px #00100e14, 0 8px 36px 16px #00100e08;
+  box-sizing: border-box;
+  color: #E72221;
+  cursor: pointer;
+}
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.triangle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid currentColor;
+  transform: translate(-50%, -50%);
+}
+
+/* 停止ボタン */
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.pause {
+  bottom: calc(100% - 17.5px);
+  width: 24px;
+  height: 24px;
+  font-size: 12.5px;
+  color: #E72221;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px -2px #00100e14, 0 8px 36px 16px #00100e08;
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.pause::before,
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.pause::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 10px;
+  box-sizing: border-box;
+  background-color: currentColor;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.pause::before {
+  left: 40%;
+}
+.karte_kcx_home_coupons_only_sp_auto_slide_btn.pause::after {
+  left: 60%;
+}
+
+/* -------------------------------------------------- */
+/* SPのコンテンツをカードの上から配置する */
+.karte_kcx_sp_rec_home_coupons_card--count-1,
+.karte_kcx_sp_rec_home_coupons_card--count-2,
+.karte_kcx_sp_rec_home_coupons_card--count-3 {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* 1行の高さをfigma準拠の128pxに固定し、件数が少ない場合は上詰めにする */
+.karte_kcx_sp_rec_home_coupons_card--count-1 .karte_kcx_sp_rec_home_coupons_row,
+.karte_kcx_sp_rec_home_coupons_card--count-2 .karte_kcx_sp_rec_home_coupons_row,
+.karte_kcx_sp_rec_home_coupons_card--count-3 .karte_kcx_sp_rec_home_coupons_row {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: auto;
+  min-height: 128px;
+}
+
+.karte_kcx_sp_rec_home_coupons_card--count-1 .karte_kcx_sp_rec_home_coupons_row.karte_kcx_sp_rec_home_coupons_row--no-note,
+.karte_kcx_sp_rec_home_coupons_card--count-2 .karte_kcx_sp_rec_home_coupons_row.karte_kcx_sp_rec_home_coupons_row--no-note,
+.karte_kcx_sp_rec_home_coupons_card--count-3 .karte_kcx_sp_rec_home_coupons_row.karte_kcx_sp_rec_home_coupons_row--no-note {
+  min-height: 128px;
+}
+
+/* ------------------------------------------------------------------------------- */
+@media screen and (max-width: 720px) {
+  .karte_kcx_home_coupons_only_pc {
+    display: none !important;
+  }
+
+  /* SPのみ左右ナビボタンを非表示 */
+  .karte_kcx_home_coupons_only_sp_slider__Btn:where(.astro-RSPN73YO_only_sp) {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .karte_kcx_home_coupons_only_sp {
+    display: none !important;
+  }
+}
+/* ------------------------------------------------------------------------------- */
+
+/* PC専用カルーセル（721px以上で3スライドを表示する） */
+.karte_kcx_home_coupons_only_pc_main_wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.karte_kcx_home_coupons_only_pc_root {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  min-height: 300px;
+  overflow: visible;
+  background: transparent; /* 背景はsection側の#F0FEDAを利用 */
+}
+
+.karte_kcx_home_coupons_only_pc_slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: flex-start;
+}
+
+.karte_kcx_home_coupons_only_pc_group {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  /* margin: 0 12px; */
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.karte_kcx_home_coupons_only_pc_item {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  width: 33.3333%; /* 1画面3枚表示(Figma準拠) */
+  height: 100%;
+
+  padding: 6px; /* 左右6px同士でカード間12px */
+  box-sizing: border-box;
+
+  opacity: 0;
+  text-decoration: none;
+
+  transition: left 0.8s ease, opacity 0.8s ease;
+}
+
+.karte_kcx_home_coupons_only_pc_item:nth-child(1) {
+  left: 0;
+  opacity: 1;
+}
+
+.karte_kcx_home_coupons_only_pc_item:nth-child(2) {
+  left: 33.3333%;
+  opacity: 1;
+}
+
+.karte_kcx_home_coupons_only_pc_item:nth-child(3) {
+  left: 66.6666%;
+  opacity: 1;
+}
+
+/* 4枚目以降は基底スタイル(left:100%, opacity:0)のまま非表示にして3枚表示にする */
+
+.karte_kcx_pc_rec_home_coupons_card {
+  width: 100%;
+  height: 100%;
+
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, .06);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 8px 8px 20px;
+  box-sizing: border-box;
+}
+
+.karte_kcx_pc_rec_home_coupons_media {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  overflow: hidden;
+  background: #ddd;
+  border-radius: 10px;
+
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.karte_kcx_pc_rec_home_coupons_thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.karte_kcx_pc_rec_home_coupons_body {
+  width: 100%;
+  min-height: 0;
+  margin-top: 19px;
+  padding: 0;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.karte_kcx_pc_rec_home_coupons_title {
+  margin: 0;
+  padding: 2px 10px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #333;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.karte_kcx_pc_rec_home_coupons_line {
+  display: none;
+}
+
+.karte_kcx_pc_rec_home_coupons_desc {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  word-break: break-word;
+}
+
+.karte_kcx_pc_rec_home_coupons_note {
+  /* Figmaデザインに注記欄が無いため非表示(高さ計算に影響しないようdisplay:noneは使わない) */
+  margin: 0;
+  padding: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.karte_kcx_home_coupons_only_pc_prev,
+.karte_kcx_home_coupons_only_pc_next {
+  position: static;
+  flex-shrink: 0;
+  top: auto;
+  z-index: 10;
+  color: #E72221;
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 18px -2px #00100e14, 0 8px 36px 16px #00100e08;
+
+  cursor: pointer;
+  transform: none;
+  z-index: 1;
+}
+
+.karte_kcx_home_coupons_only_pc_prev {
+  order: -1;
+  margin-right: 12px;
+  align-self: center;
+  transform: translateY(-25px);
+}
+
+.karte_kcx_home_coupons_only_pc_next {
+  order: 1;
+  margin-left: 12px;
+  align-self: center;
+  transform: translateY(-25px);
+}
+
+@media screen and (min-width: 721px) {
+  .karte_kcx_home_coupons_only_pc_root {
+    height: 360px;
+    min-height: 320px;
+  }
+
+  .karte_kcx_home_coupons_only_pc_group {
+    height: calc(100% - 50px);
+  }
+}
+
+/* ------------------------------------------------------------------------------- */
+/* 二重管理を回避 */
+
+.karte_kcx_data_coupons_source {
+  display: none;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* PCのページングと停止・再生ボタンをSPと同じ見た目にする */
+.karte_kcx_home_coupons_only_pc_controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 721px) {
+  .karte_kcx_home_coupons_only_pc_controls {
+    bottom: 15px;
+  }
+}
+
+.karte_kcx_home_coupons_only_pc_indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.karte_kcx_home_coupons_only_pc_indicator {
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin: 0 4.5px;
+  padding: 0;
+  border: 0;
+  border-radius: 40px;
+  background: rgba(0, 16, 14, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .18);
+  cursor: pointer;
+}
+
+.karte_kcx_home_coupons_only_pc_indicator.is-current {
+  background: #E72221;
+}
+
+.karte_kcx_home_coupons_only_pc_pause {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 20px;
+  padding: 0;
+  border: 0;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px -2px #00100e14, 0 8px 36px 16px #00100e08;
+  display: block;
+  box-sizing: border-box;
+  color: #E72221;
+  cursor: pointer;
+}
+
+.karte_kcx_home_coupons_only_pc_pause.pause::before,
+.karte_kcx_home_coupons_only_pc_pause.pause::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.karte_kcx_home_coupons_only_pc_pause.pause::before {
+  left: 40%;
+}
+
+.karte_kcx_home_coupons_only_pc_pause.pause::after {
+  left: 60%;
+}
+
+.karte_kcx_home_coupons_only_pc_pause.triangle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid currentColor;
+  transform: translate(-50%, -50%);
+}
+
+/* ソースの説明テキスト */
+.karte_kcx_data_coupons_desc {
+  margin: 0;
+  font-size: 8.75px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #2b2b2b;
+  word-break: break-word;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* PCタイトル表示保証（競合スタイルがあっても画像下に表示する） */
+@media screen and (min-width: 721px) {
+  .karte_kcx_home_coupons_only_pc_item .karte_kcx_pc_rec_home_coupons_body .karte_kcx_pc_rec_home_coupons_title {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+  }
+
+  .karte_kcx_home_coupons_only_pc_item .karte_kcx_pc_rec_home_coupons_body .karte_kcx_pc_rec_home_coupons_title br {
+    display: none !important;
+  }
+
+  .karte_kcx_home_coupons_only_pc_item .karte_kcx_pc_rec_home_coupons_body .karte_kcx_pc_rec_home_coupons_line {
+    display: none !important;
+  }
+}
+
+.outline_button {
+  height: 60px;
+  width: 338px;
+  margin: 20px auto 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: #fff;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, .06);
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.outline_button .outline_button_arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #E72221;
+  border-right: 3px solid #E72221;
+  box-sizing: border-box;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+@media screen and (max-width: 720px) {
+  .outline_button {
+    width: 100%;
+  }
+}
+
+.karte_kcx_home_services_root_SCOPO > .outline_button {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin: 20px 0 0;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+@media screen and (min-width: 1051px) {
+  .karte_kcx_home_coupons_only_pc_root {
+    width: 1100px;
+    max-width: calc(100vw - 48px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

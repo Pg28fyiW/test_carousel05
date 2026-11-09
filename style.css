@@ -1,0 +1,71 @@
+
+/* ============================================================
+   style.css
+   kcx-front/src/styles.scss のうち、ホーム画面の表示に関わる
+   共通リセット・ベーススタイルを抜粋して反映したものです。
+   （本ページ単体で固定ヘッダーを含まないため、ヘッダー分の
+    body padding-top は反映していません）
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, div, span, img, a, table, tr, th, td, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+header, footer, nav, section, article, aside, figure, figcaption {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+
+ol, ul, nav {
+  list-style: none;
+  list-style-type: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: #F4F4F4;
+  color: #212121;
+  font-family: "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #212121;
+}
+
+.pointer {
+  cursor: pointer;
+}
