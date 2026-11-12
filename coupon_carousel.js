@@ -427,8 +427,8 @@ function createSP1s3cSideImageCarousel() {
   function g() {
     const r = spRoot.querySelectorAll(".slider__Indicator-BZV63T2Q_only_sp");
     if (!r || r.length === 0) return;
-    for (let n = 0; n < r.length; n++) r[n].classList.remove("indicatorcurrent-BZV63T2Q_only_sp");
-    r[d].classList.add("indicatorcurrent-BZV63T2Q_only_sp");
+    for (let n = 0; n < r.length; n++) r[n].classList.remove("indicatorCurrent-BZV63T2Q_only_sp");
+    r[d].classList.add("indicatorCurrent-BZV63T2Q_only_sp");
   }
 
   function v() {
